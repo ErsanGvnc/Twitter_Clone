@@ -3,14 +3,14 @@
 import 'package:flutter/material.dart';
 import 'package:twitter_clone/main.dart';
 
-class exploreleft extends StatefulWidget {
-  const exploreleft({Key? key}) : super(key: key);
+class Exploreleft extends StatefulWidget {
+  const Exploreleft({Key? key}) : super(key: key);
 
   @override
-  State<exploreleft> createState() => _exploreleftState();
+  State<Exploreleft> createState() => _ExploreleftState();
 }
 
-class _exploreleftState extends State<exploreleft> {
+class _ExploreleftState extends State<Exploreleft> {
   @override
   Widget build(BuildContext context) {
     var screenwidth = MediaQuery.of(context).size.width;

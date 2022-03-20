@@ -21,7 +21,7 @@ class _TrendState extends State<Trend> {
     return Stack(
       children: [
         ListView.builder(
-          padding: EdgeInsets.only(top: 50),
+          padding: EdgeInsets.only(top: 101),
           itemCount: info.length,
           scrollDirection: Axis.vertical,
           controller: mainController,
@@ -188,29 +188,175 @@ class _TrendState extends State<Trend> {
         Container(
           decoration: BoxDecoration(
             color: Colors.black.withOpacity(0.97),
+            // color: Colors.red,
             border: Border.all(
-              width: 0.1,
+              width: 0.3,
               color: Colors.grey,
             ),
           ),
           width: screenwidth,
-          height: 50,
+          height: 101,
           child: Padding(
             padding: EdgeInsets.symmetric(horizontal: 15),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            child: Column(
               children: [
-                Text(
-                  "Anasayfa",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                  ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Icon(
+                      Icons.arrow_back,
+                      color: Colors.white,
+                    ),
+                    SizedBox(width: 25),
+                    Flexible(
+                      child: Container(
+                        height: 50,
+                        child: Padding(
+                          padding: EdgeInsets.fromLTRB(10, 3, 10, 3),
+                          child: Container(
+                            // color: Colors.blue,
+                            child: TextField(
+                              decoration: InputDecoration(
+                                fillColor: Color.fromRGBO(32, 35, 39, 1),
+                                filled: true,
+                                border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(30),
+                                ),
+                                hintText: "Twitter'da Ara",
+                                hintStyle: TextStyle(
+                                  color: Colors.grey,
+                                ),
+                                prefixIcon: Padding(
+                                  padding: EdgeInsets.symmetric(horizontal: 15),
+                                  child: Icon(
+                                    Icons.search,
+                                    color: Colors.grey,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    SizedBox(width: 20),
+                    Icon(
+                      Icons.more_horiz,
+                      color: Colors.white,
+                    ),
+                  ],
                 ),
-                Icon(
-                  Icons.ac_unit,
-                  color: Colors.white,
+                Container(
+                  width: screenwidth,
+                  child: Row(
+                    children: [
+                      Expanded(
+                        child: InkWell(
+                          onTap: () {
+                            setState(() {
+                              trend = "popular";
+                            });
+                          },
+                          child: Container(
+                            height: 50,
+                            child: Center(
+                              child: Text(
+                                "Popüler",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 16,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      Expanded(
+                        child: InkWell(
+                          onTap: () {
+                            setState(() {
+                              trend = "last";
+                            });
+                          },
+                          child: Container(
+                            height: 50,
+                            child: Center(
+                              child: Text(
+                                "En Son",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 16,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      Expanded(
+                        child: InkWell(
+                          onTap: () {
+                            setState(() {
+                              trend = "persons";
+                            });
+                          },
+                          child: Container(
+                            height: 50,
+                            child: Center(
+                              child: Text(
+                                "Kişiler",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 16,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      Expanded(
+                        child: InkWell(
+                          onTap: () {
+                            setState(() {
+                              trend = "images";
+                            });
+                          },
+                          child: Container(
+                            height: 50,
+                            child: Center(
+                              child: Text(
+                                "Fotoğraflar",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 16,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      Expanded(
+                        child: InkWell(
+                          onTap: () {
+                            setState(() {
+                              trend = "videos";
+                            });
+                          },
+                          child: Container(
+                            height: 50,
+                            child: Center(
+                              child: Text(
+                                "Videolar",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 16,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ],
             ),

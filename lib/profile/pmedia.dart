@@ -1,0 +1,76 @@
+// ignore_for_file: camel_case_types, avoid_unnecessary_containers, prefer_const_constructors, prefer_const_literals_to_create_immutables, unused_local_variable
+
+import 'package:flutter/material.dart';
+
+class pmedia extends StatefulWidget {
+  const pmedia({Key? key}) : super(key: key);
+
+  @override
+  State<pmedia> createState() => _pmediaState();
+}
+
+class _pmediaState extends State<pmedia> {
+  @override
+  Widget build(BuildContext context) {
+    var screenwidth = MediaQuery.of(context).size.width;
+    var screenheight = MediaQuery.of(context).size.height;
+    return Container(
+      width: screenwidth,
+      decoration: BoxDecoration(
+        border: Border(
+          top: BorderSide(
+            color: Colors.grey,
+            width: 0.3,
+          ),
+        ),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              SizedBox(height: 25),
+              Text(
+                "Henüz bir fotoğraf \nveya video \nTweetlemedin",
+                textAlign: TextAlign.left,
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              SizedBox(height: 10),
+              Text(
+                "Bir fotoğraf ya da video içeren Tweetler attığın \nzaman, burada gözükecekler.",
+                textAlign: TextAlign.left,
+                style: TextStyle(
+                  color: Colors.grey[700],
+                ),
+              ),
+              SizedBox(height: 25),
+              Container(
+                decoration: BoxDecoration(
+                  color: Colors.blue,
+                  borderRadius: BorderRadius.circular(30),
+                ),
+                child: Padding(
+                  padding: EdgeInsets.fromLTRB(30, 15, 30, 15),
+                  child: Text(
+                    "Bir fotoğraf ya da video Tweetle",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 17,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+}

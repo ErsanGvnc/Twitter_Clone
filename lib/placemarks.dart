@@ -3,14 +3,14 @@
 import 'package:flutter/material.dart';
 import 'package:twitter_clone/main.dart';
 
-class Message extends StatefulWidget {
-  const Message({Key? key}) : super(key: key);
+class Placemarks extends StatefulWidget {
+  const Placemarks({Key? key}) : super(key: key);
 
   @override
-  State<Message> createState() => _MessageState();
+  State<Placemarks> createState() => _PlacemarksState();
 }
 
-class _MessageState extends State<Message> {
+class _PlacemarksState extends State<Placemarks> {
   @override
   Widget build(BuildContext context) {
     var screenwidth = MediaQuery.of(context).size.width;
@@ -27,42 +27,29 @@ class _MessageState extends State<Message> {
               children: [
                 Container(
                   child: Padding(
-                    padding: EdgeInsets.fromLTRB(30, 35, 30, 0),
+                    padding: EdgeInsets.symmetric(horizontal: 150),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
+                        SizedBox(height: 50),
+                        Image.asset("assets/images/placemarks.png"),
+                        SizedBox(height: 25),
                         Text(
-                          "Mesaj gönder, mesaj \nal",
+                          "Tweetleri daha \nsonrası için kaydet",
+                          textAlign: TextAlign.left,
                           style: TextStyle(
                             color: Colors.white,
-                            fontSize: 26,
+                            fontSize: 30,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
                         SizedBox(height: 10),
                         Text(
-                          "Direkt Mesajlar, sen ve Twitter'daki diğer kişiler arasında gerçekleşen özel sohbetlerdir. Tweetleri, medyaları ve daha fazlasını paylaşabilirsin!",
+                          "İyi Tweetlerin kaybolup gitmesine izin verme! Daha sonra kolayca bulmak için Tweetleri yer işaretlerine ekle.",
+                          textAlign: TextAlign.left,
                           style: TextStyle(
-                            color: Colors.grey,
-                          ),
-                        ),
-                        SizedBox(height: 30),
-                        Container(
-                          width: 175,
-                          height: 50,
-                          decoration: BoxDecoration(
-                            color: Colors.blue,
-                            borderRadius: BorderRadius.circular(30),
-                          ),
-                          child: Center(
-                            child: Text(
-                              "Sohbet başlat",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.w600,
-                                fontSize: 17,
-                              ),
-                            ),
+                            color: Colors.grey[700],
                           ),
                         ),
                       ],
@@ -86,24 +73,28 @@ class _MessageState extends State<Message> {
           child: Padding(
             padding: EdgeInsets.symmetric(horizontal: 15),
             child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(
-                  "Mesajlar",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                Spacer(),
-                Icon(
-                  Icons.settings_outlined,
-                  color: Colors.white,
-                ),
-                SizedBox(width: 15),
-                Icon(
-                  Icons.mark_email_read_outlined,
-                  color: Colors.white,
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      "Yer İşaretleri",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    Text(
+                      "@newsstechno",
+                      style: TextStyle(
+                        color: Colors.grey,
+                        fontSize: 13,
+                      ),
+                    ),
+                  ],
                 ),
               ],
             ),

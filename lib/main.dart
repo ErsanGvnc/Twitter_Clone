@@ -3,13 +3,26 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:twitter_clone/explore.dart';
+import 'package:twitter_clone/lists.dart';
 import 'package:twitter_clone/mainpage.dart';
 import 'package:twitter_clone/message.dart';
 import 'package:twitter_clone/models/explodreLeft.dart';
 import 'package:twitter_clone/models/mainLeft.dart';
 import 'package:twitter_clone/models/messageLeft.dart';
+import 'package:twitter_clone/models/profileLeft.dart';
 import 'package:twitter_clone/notification.dart';
+import 'package:twitter_clone/placemarks.dart';
+import 'package:twitter_clone/profile.dart';
+import 'package:twitter_clone/profile/plike.dart';
+import 'package:twitter_clone/profile/pmedia.dart';
+import 'package:twitter_clone/profile/ptweets.dart';
+import 'package:twitter_clone/profile/ptweetsandanswers.dart';
 import 'package:twitter_clone/trendpage.dart';
+import 'package:twitter_clone/trendsmodels/images.dart';
+import 'package:twitter_clone/trendsmodels/last.dart';
+import 'package:twitter_clone/trendsmodels/persons.dart';
+import 'package:twitter_clone/trendsmodels/popular.dart';
+import 'package:twitter_clone/trendsmodels/videos.dart';
 
 void main() {
   runApp(MyApp());
@@ -36,6 +49,8 @@ final ScrollController TrendController = ScrollController();
 
 String sayfa = "";
 String notf = "all";
+String profile = "ptweets";
+String trend = "";
 
 Widget mainPage() {
   switch (sayfa) {
@@ -49,6 +64,12 @@ Widget mainPage() {
       return Notf();
     case "message":
       return Message();
+    case "placemarks":
+      return Placemarks();
+    case "lists":
+      return Lists();
+    case "profile":
+      return Profile();
     default:
       return MainPage();
   }
@@ -57,13 +78,47 @@ Widget mainPage() {
 Widget leftPage() {
   switch (sayfa) {
     case "main":
-      return mainleft();
+      return Mainleft();
     case "explore":
-      return exploreleft();
+      return Exploreleft();
     case "message":
-      return messageleft();
+      return Messageleft();
+    case "profile":
+      return Profileleft();
     default:
-      return mainleft();
+      return Mainleft();
+  }
+}
+
+Widget profilebottom() {
+  switch (profile) {
+    case "ptweets":
+      return ptweets();
+    case "ptweetsandanswers":
+      return ptweetsandanswers();
+    case "pmedia":
+      return pmedia();
+    case "plike":
+      return plike();
+    default:
+      return ptweets();
+  }
+}
+
+Widget trends() {
+  switch (trend) {
+    case "popular":
+      return popular();
+    case "last":
+      return last();
+    case "persons":
+      return persons();
+    case "images":
+      return images();
+    case "videos":
+      return videos();
+    default:
+      return popular();
   }
 }
 
@@ -264,118 +319,143 @@ class _MyHomePageState extends State<MyHomePage> {
                               ),
                             ),
                             SizedBox(height: 5),
-                            Container(
-                              height: 50,
-                              width: screenwidth,
-                              decoration: BoxDecoration(
-                                //color: Colors.red,
-                                borderRadius: BorderRadius.circular(30),
-                              ),
-                              child: Padding(
-                                padding: EdgeInsets.symmetric(horizontal: 10),
-                                child: Row(
-                                  children: [
-                                    Icon(
-                                      Icons.bookmark_outline,
-                                      color: Colors.white,
-                                      size: 27,
-                                    ),
-                                    SizedBox(width: 15),
-                                    Text(
-                                      "Yer İşaretleri",
-                                      style: TextStyle(
+                            InkWell(
+                              onTap: () {
+                                setState(() {
+                                  sayfa = "placemarks";
+                                });
+                              },
+                              child: Container(
+                                height: 50,
+                                width: screenwidth,
+                                decoration: BoxDecoration(
+                                  //color: Colors.red,
+                                  borderRadius: BorderRadius.circular(30),
+                                ),
+                                child: Padding(
+                                  padding: EdgeInsets.symmetric(horizontal: 10),
+                                  child: Row(
+                                    children: [
+                                      Icon(
+                                        Icons.bookmark_outline,
                                         color: Colors.white,
-                                        fontSize: 20,
+                                        size: 27,
                                       ),
-                                    ),
-                                  ],
+                                      SizedBox(width: 15),
+                                      Text(
+                                        "Yer İşaretleri",
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 20,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
                                 ),
                               ),
                             ),
                             SizedBox(height: 5),
-                            Container(
-                              height: 50,
-                              width: screenwidth,
-                              decoration: BoxDecoration(
-                                //color: Colors.red,
-                                borderRadius: BorderRadius.circular(30),
-                              ),
-                              child: Padding(
-                                padding: EdgeInsets.symmetric(horizontal: 10),
-                                child: Row(
-                                  children: [
-                                    Icon(
-                                      Icons.article_outlined,
-                                      color: Colors.white,
-                                      size: 27,
-                                    ),
-                                    SizedBox(width: 15),
-                                    Text(
-                                      "Listeler",
-                                      style: TextStyle(
+                            InkWell(
+                              onTap: () {
+                                setState(() {
+                                  sayfa = "lists";
+                                });
+                              },
+                              child: Container(
+                                height: 50,
+                                width: screenwidth,
+                                decoration: BoxDecoration(
+                                  //color: Colors.red,
+                                  borderRadius: BorderRadius.circular(30),
+                                ),
+                                child: Padding(
+                                  padding: EdgeInsets.symmetric(horizontal: 10),
+                                  child: Row(
+                                    children: [
+                                      Icon(
+                                        Icons.article_outlined,
                                         color: Colors.white,
-                                        fontSize: 20,
+                                        size: 27,
                                       ),
-                                    ),
-                                  ],
+                                      SizedBox(width: 15),
+                                      Text(
+                                        "Listeler",
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 20,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
                                 ),
                               ),
                             ),
                             SizedBox(height: 5),
-                            Container(
-                              height: 50,
-                              width: screenwidth,
-                              decoration: BoxDecoration(
-                                //color: Colors.red,
-                                borderRadius: BorderRadius.circular(30),
-                              ),
-                              child: Padding(
-                                padding: EdgeInsets.symmetric(horizontal: 10),
-                                child: Row(
-                                  children: [
-                                    Icon(
-                                      Icons.person_outline,
-                                      color: Colors.white,
-                                      size: 27,
-                                    ),
-                                    SizedBox(width: 15),
-                                    Text(
-                                      "Profil",
-                                      style: TextStyle(
+                            InkWell(
+                              onTap: () {
+                                setState(() {
+                                  sayfa = "profile";
+                                  profile = "ptweets";
+                                });
+                              },
+                              child: Container(
+                                height: 50,
+                                width: screenwidth,
+                                decoration: BoxDecoration(
+                                  //color: Colors.red,
+                                  borderRadius: BorderRadius.circular(30),
+                                ),
+                                child: Padding(
+                                  padding: EdgeInsets.symmetric(horizontal: 10),
+                                  child: Row(
+                                    children: [
+                                      Icon(
+                                        Icons.person_outline,
                                         color: Colors.white,
-                                        fontSize: 20,
+                                        size: 27,
                                       ),
-                                    ),
-                                  ],
+                                      SizedBox(width: 15),
+                                      Text(
+                                        "Profil",
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 20,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
                                 ),
                               ),
                             ),
                             SizedBox(height: 5),
-                            Container(
-                              height: 50,
-                              width: screenwidth,
-                              decoration: BoxDecoration(
-                                //color: Colors.red,
-                                borderRadius: BorderRadius.circular(30),
-                              ),
-                              child: Padding(
-                                padding: EdgeInsets.symmetric(horizontal: 10),
-                                child: Row(
-                                  children: [
-                                    Icon(
-                                      Icons.pending_outlined,
-                                      color: Colors.white,
-                                      size: 27,
-                                    ),
-                                    SizedBox(width: 15),
-                                    Text(
-                                      "Daha fazla",
-                                      style: TextStyle(
+                            InkWell(
+                              onTap: () {},
+                              child: Container(
+                                height: 50,
+                                width: screenwidth,
+                                decoration: BoxDecoration(
+                                  //color: Colors.red,
+                                  borderRadius: BorderRadius.circular(30),
+                                ),
+                                child: Padding(
+                                  padding: EdgeInsets.symmetric(horizontal: 10),
+                                  child: Row(
+                                    children: [
+                                      Icon(
+                                        Icons.pending_outlined,
                                         color: Colors.white,
-                                        fontSize: 20,
+                                        size: 27,
                                       ),
-                                    ),
-                                  ],
+                                      SizedBox(width: 15),
+                                      Text(
+                                        "Daha fazla",
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 20,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
                                 ),
                               ),
                             ),
@@ -492,16 +572,29 @@ class _MyHomePageState extends State<MyHomePage> {
                   width: 0.1,
                 ),
               ),
-              width: max(0, 600),
-              // child: Notf(),
+              width: sayfa == "message" ? 400 : max(0, 600),
+              // child: Trend(),
               child: Builder(
                 builder: (BuildContext context) => mainPage(),
               ),
+              // child: trend == "popular" ||
+              //         trend == "last" ||
+              //         trend == "persons" ||
+              //         trend == "images" ||
+              //         trend == "videos"
+              //     ? Builder(
+              //         builder: (BuildContext context) => trends(),
+              //       )
+              //     : Builder(
+              //         builder: (BuildContext context) => mainPage(),
+              //       ),
             ),
-            SizedBox(width: 20),
+            SizedBox(
+              width: sayfa == "message" ? 0 : 20,
+            ),
             Container(
               // color: Colors.blue,
-              width: 350,
+              width: sayfa == "message" ? 570 : 350,
               child: Builder(
                 builder: (BuildContext context) => leftPage(),
               ),

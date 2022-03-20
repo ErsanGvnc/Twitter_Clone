@@ -1,16 +1,16 @@
-// ignore_for_file: prefer_const_constructors, unused_local_variable, avoid_unnecessary_containers, sized_box_for_whitespace, prefer_const_literals_to_create_immutables, file_names, avoid_print
+// ignore_for_file: prefer_const_constructors, unused_local_variable, avoid_unnecessary_containers, sized_box_for_whitespace, prefer_const_literals_to_create_immutables, file_names, camel_case_types
 
 import 'package:flutter/material.dart';
 import 'package:twitter_clone/main.dart';
 
-class Mainleft extends StatefulWidget {
-  const Mainleft({Key? key}) : super(key: key);
+class Profileleft extends StatefulWidget {
+  const Profileleft({Key? key}) : super(key: key);
 
   @override
-  State<Mainleft> createState() => _MainleftState();
+  State<Profileleft> createState() => _ProfileleftState();
 }
 
-class _MainleftState extends State<Mainleft> {
+class _ProfileleftState extends State<Profileleft> {
   @override
   Widget build(BuildContext context) {
     var screenwidth = MediaQuery.of(context).size.width;
@@ -45,6 +45,204 @@ class _MainleftState extends State<Mainleft> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
+                            "Bunları beğenebilirsin",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          SizedBox(height: 25),
+                          Container(
+                            child: Row(
+                              children: [
+                                CircleAvatar(
+                                  backgroundImage: AssetImage(
+                                      "assets/images/sampleAvatar.png"),
+                                ),
+                                SizedBox(width: 10),
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      "Özgür Demirtaş",
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                    Text(
+                                      "@ProfDemirtas",
+                                      style: TextStyle(
+                                        color: Colors.grey,
+                                        fontSize: 13,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                Spacer(),
+                                Container(
+                                  height: 30,
+                                  width: 75,
+                                  decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    borderRadius: BorderRadius.circular(30),
+                                  ),
+                                  child: Padding(
+                                    padding:
+                                        EdgeInsets.symmetric(horizontal: 10),
+                                    child: Center(
+                                      child: Text(
+                                        "Takip et",
+                                        style: TextStyle(
+                                          fontWeight: FontWeight.w600,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          SizedBox(height: 20),
+                          Container(
+                            child: Row(
+                              children: [
+                                CircleAvatar(
+                                  backgroundImage: AssetImage(
+                                      "assets/images/sampleAvatar.png"),
+                                ),
+                                SizedBox(width: 10),
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      "DEVS Society",
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                    Text(
+                                      "@DEVSSociety",
+                                      style: TextStyle(
+                                        color: Colors.grey,
+                                        fontSize: 13,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                Spacer(),
+                                Container(
+                                  height: 30,
+                                  width: 75,
+                                  decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    borderRadius: BorderRadius.circular(30),
+                                  ),
+                                  child: Padding(
+                                    padding:
+                                        EdgeInsets.symmetric(horizontal: 10),
+                                    child: Center(
+                                      child: Text(
+                                        "Takip et",
+                                        style: TextStyle(
+                                          fontWeight: FontWeight.w600,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          SizedBox(height: 20),
+                          Container(
+                            child: Row(
+                              children: [
+                                CircleAvatar(
+                                  backgroundImage: AssetImage(
+                                      "assets/images/sampleAvatar.png"),
+                                ),
+                                SizedBox(width: 10),
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      "Aramizdaki Oyuncu",
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                    Text(
+                                      "@Aramizdakioyuncu",
+                                      style: TextStyle(
+                                        color: Colors.grey,
+                                        fontSize: 13,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                Spacer(),
+                                Container(
+                                  height: 30,
+                                  width: 75,
+                                  decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    borderRadius: BorderRadius.circular(30),
+                                  ),
+                                  child: Padding(
+                                    padding:
+                                        EdgeInsets.symmetric(horizontal: 10),
+                                    child: Center(
+                                      child: Text(
+                                        "Takip et",
+                                        style: TextStyle(
+                                          fontWeight: FontWeight.w600,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          SizedBox(height: 25),
+                          Container(
+                            child: Text(
+                              "Daha fazla göster",
+                              style: TextStyle(
+                                color: Colors.blue,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 15),
+                  Container(
+                    width: screenwidth,
+                    decoration: BoxDecoration(
+                      color: Color.fromRGBO(22, 24, 28, 1),
+                      borderRadius: BorderRadius.circular(20),
+                      // border: Border(
+                      //   bottom: BorderSide(
+                      //     width: 0.2,
+                      //     color: Colors.grey,
+                      //   ),
+                      // ),
+                    ),
+                    child: Padding(
+                      padding: EdgeInsets.all(20),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
                             "İlgini çekebilecek gündemler",
                             style: TextStyle(
                               color: Colors.white,
@@ -53,51 +251,43 @@ class _MainleftState extends State<Mainleft> {
                             ),
                           ),
                           SizedBox(height: 15),
-                          InkWell(
-                            onTap: () {
-                              setState(() {
-                                sayfa = "trend";
-                                print(sayfa);
-                              });
-                            },
-                            child: Container(
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Text(
-                                        "Türkiye konumunda gündemde",
-                                        style: TextStyle(
-                                          color: Colors.grey,
-                                          fontSize: 13,
-                                        ),
-                                      ),
-                                      Icon(
-                                        Icons.more_horiz,
+                          Container(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text(
+                                      "Türkiye konumunda gündemde",
+                                      style: TextStyle(
                                         color: Colors.grey,
-                                        size: 20,
-                                      )
-                                    ],
-                                  ),
-                                  Text(
-                                    "#kartatili",
-                                    style: TextStyle(
-                                      color: Colors.white,
+                                        fontSize: 13,
+                                      ),
                                     ),
-                                  ),
-                                  SizedBox(height: 5),
-                                  Text(
-                                    "8.766 Tweet",
-                                    style: TextStyle(
+                                    Icon(
+                                      Icons.more_horiz,
                                       color: Colors.grey,
-                                      fontSize: 13,
-                                    ),
+                                      size: 20,
+                                    )
+                                  ],
+                                ),
+                                Text(
+                                  "#kartatili",
+                                  style: TextStyle(
+                                    color: Colors.white,
                                   ),
-                                ],
-                              ),
+                                ),
+                                SizedBox(height: 5),
+                                Text(
+                                  "8.766 Tweet",
+                                  style: TextStyle(
+                                    color: Colors.grey,
+                                    fontSize: 13,
+                                  ),
+                                ),
+                              ],
                             ),
                           ),
                           SizedBox(height: 20),
@@ -310,204 +500,6 @@ class _MainleftState extends State<Mainleft> {
                                   style: TextStyle(
                                     color: Colors.grey,
                                     fontSize: 13,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          SizedBox(height: 25),
-                          Container(
-                            child: Text(
-                              "Daha fazla göster",
-                              style: TextStyle(
-                                color: Colors.blue,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                  SizedBox(height: 15),
-                  Container(
-                    width: screenwidth,
-                    decoration: BoxDecoration(
-                      color: Color.fromRGBO(22, 24, 28, 1),
-                      borderRadius: BorderRadius.circular(20),
-                      // border: Border(
-                      //   bottom: BorderSide(
-                      //     width: 0.2,
-                      //     color: Colors.grey,
-                      //   ),
-                      // ),
-                    ),
-                    child: Padding(
-                      padding: EdgeInsets.all(20),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            "Kimi takip etmeli",
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          SizedBox(height: 25),
-                          Container(
-                            child: Row(
-                              children: [
-                                CircleAvatar(
-                                  backgroundImage: AssetImage(
-                                      "assets/images/sampleAvatar.png"),
-                                ),
-                                SizedBox(width: 10),
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      "Özgür Demirtaş",
-                                      style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 14,
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                    ),
-                                    Text(
-                                      "@ProfDemirtas",
-                                      style: TextStyle(
-                                        color: Colors.grey,
-                                        fontSize: 13,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                                Spacer(),
-                                Container(
-                                  height: 30,
-                                  width: 75,
-                                  decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    borderRadius: BorderRadius.circular(30),
-                                  ),
-                                  child: Padding(
-                                    padding:
-                                        EdgeInsets.symmetric(horizontal: 10),
-                                    child: Center(
-                                      child: Text(
-                                        "Takip et",
-                                        style: TextStyle(
-                                          fontWeight: FontWeight.w600,
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          SizedBox(height: 20),
-                          Container(
-                            child: Row(
-                              children: [
-                                CircleAvatar(
-                                  backgroundImage: AssetImage(
-                                      "assets/images/sampleAvatar.png"),
-                                ),
-                                SizedBox(width: 10),
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      "DEVS Society",
-                                      style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 14,
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                    ),
-                                    Text(
-                                      "@DEVSSociety",
-                                      style: TextStyle(
-                                        color: Colors.grey,
-                                        fontSize: 13,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                                Spacer(),
-                                Container(
-                                  height: 30,
-                                  width: 75,
-                                  decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    borderRadius: BorderRadius.circular(30),
-                                  ),
-                                  child: Padding(
-                                    padding:
-                                        EdgeInsets.symmetric(horizontal: 10),
-                                    child: Center(
-                                      child: Text(
-                                        "Takip et",
-                                        style: TextStyle(
-                                          fontWeight: FontWeight.w600,
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          SizedBox(height: 20),
-                          Container(
-                            child: Row(
-                              children: [
-                                CircleAvatar(
-                                  backgroundImage: AssetImage(
-                                      "assets/images/sampleAvatar.png"),
-                                ),
-                                SizedBox(width: 10),
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      "Aramizdaki Oyuncu",
-                                      style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 14,
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                    ),
-                                    Text(
-                                      "@Aramizdakioyuncu",
-                                      style: TextStyle(
-                                        color: Colors.grey,
-                                        fontSize: 13,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                                Spacer(),
-                                Container(
-                                  height: 30,
-                                  width: 75,
-                                  decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    borderRadius: BorderRadius.circular(30),
-                                  ),
-                                  child: Padding(
-                                    padding:
-                                        EdgeInsets.symmetric(horizontal: 10),
-                                    child: Center(
-                                      child: Text(
-                                        "Takip et",
-                                        style: TextStyle(
-                                          fontWeight: FontWeight.w600,
-                                        ),
-                                      ),
-                                    ),
                                   ),
                                 ),
                               ],

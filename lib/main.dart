@@ -51,6 +51,7 @@ String sayfa = "";
 String notf = "all";
 String profile = "ptweets";
 String trend = "";
+String deneme1 = "";
 
 Widget mainPage() {
   switch (sayfa) {
@@ -122,360 +123,864 @@ Widget trends() {
   }
 }
 
+// Widget deneme() {
+//   switch (deneme1) {
+//     case "trend":
+//       return Trend();
+//     case "last":
+//       return Builder(
+//         builder: (BuildContext context) => trends(),
+//       );
+//     case "persons":
+//       return Builder(
+//         builder: (BuildContext context) => trends(),
+//       );
+//     case "images":
+//       return Builder(
+//         builder: (BuildContext context) => trends(),
+//       );
+//     case "videos":
+//       return Builder(
+//         builder: (BuildContext context) => trends(),
+//       );
+//     default:
+//       return Builder(
+//         builder: (BuildContext context) => mainPage(),
+//       );
+//   }
+// }
+
+// width: sayfa == "message" && screenwidth <= 1050
+//                             ? 520
+//                             : 300,
+
+// width: sayfa == "message" && screenwidth <= 990
+//                             ? 520
+//                             : 300,
+
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     var screenwidth = MediaQuery.of(context).size.width;
     var screenheight = MediaQuery.of(context).size.height;
+    print(screenwidth);
     return Scaffold(
       backgroundColor: Colors.black,
       body: Container(
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Container(
-              //color: Colors.green,
-              width: 250,
-              child: Align(
-                alignment: Alignment.topCenter,
-                child: Padding(
-                  padding: EdgeInsets.fromLTRB(0, 0, 30, 0),
-                  child: Stack(
-                    children: [
-                      SingleChildScrollView(
-                        scrollDirection: Axis.vertical,
-                        controller: leftMenuController,
-                        padding: EdgeInsets.fromLTRB(0, 0, 0, 75),
-                        child: Column(
-                          children: [
-                            Container(
-                              height: 50,
-                              width: screenwidth,
-                              decoration: BoxDecoration(
-                                //color: Colors.red,
-                                borderRadius: BorderRadius.circular(30),
-                              ),
-                              child: Padding(
-                                padding: EdgeInsets.all(10),
-                                child: Row(
-                                  children: [
-                                    InkWell(
-                                      onTap: () {
-                                        setState(() {
-                                          sayfa = "main";
-                                        });
-                                      },
-                                      child: Image.asset(
-                                        "assets/images/splashLogo.png",
-                                        fit: BoxFit.cover,
+            screenwidth <= 1230
+                ? Container(
+                    // color: Colors.green,
+                    width: 65,
+                    child: Align(
+                      alignment: Alignment.topCenter,
+                      child: Stack(
+                        children: [
+                          SingleChildScrollView(
+                            scrollDirection: Axis.vertical,
+                            controller: leftMenuController,
+                            padding: EdgeInsets.fromLTRB(0, 0, 15, 75),
+                            child: Column(
+                              children: [
+                                Container(
+                                  height: 50,
+                                  width: screenwidth,
+                                  decoration: BoxDecoration(
+                                    // color: Colors.red,
+                                    borderRadius: BorderRadius.circular(30),
+                                  ),
+                                  child: Padding(
+                                    padding: EdgeInsets.all(10),
+                                    child: Row(
+                                      children: [
+                                        InkWell(
+                                          onTap: () {
+                                            setState(() {
+                                              sayfa = "main";
+                                            });
+                                          },
+                                          child: Image.asset(
+                                            "assets/images/splashLogo.png",
+                                            fit: BoxFit.cover,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(height: 5),
+                                InkWell(
+                                  onTap: () {
+                                    setState(() {
+                                      sayfa = "main";
+                                    });
+                                  },
+                                  child: Container(
+                                    height: 50,
+                                    width: screenwidth,
+                                    decoration: BoxDecoration(
+                                      //color: Colors.red,
+                                      borderRadius: BorderRadius.circular(30),
+                                    ),
+                                    child: Padding(
+                                      padding:
+                                          EdgeInsets.symmetric(horizontal: 10),
+                                      child: Row(
+                                        children: [
+                                          Icon(
+                                            Icons.home,
+                                            color: Colors.white,
+                                            size: 27,
+                                          ),
+                                          // SizedBox(width: 15),
+                                          // Text(
+                                          //   "Anasayfa",
+                                          //   style: TextStyle(
+                                          //     color: Colors.white,
+                                          //     fontSize: 20,
+                                          //   ),
+                                          // ),
+                                        ],
                                       ),
                                     ),
-                                  ],
+                                  ),
                                 ),
-                              ),
-                            ),
-                            SizedBox(height: 5),
-                            InkWell(
-                              onTap: () {
-                                setState(() {
-                                  sayfa = "main";
-                                });
-                              },
-                              child: Container(
-                                height: 50,
-                                width: screenwidth,
-                                decoration: BoxDecoration(
-                                  //color: Colors.red,
-                                  borderRadius: BorderRadius.circular(30),
+                                SizedBox(height: 5),
+                                InkWell(
+                                  onTap: () {
+                                    setState(() {
+                                      sayfa = "explore";
+                                    });
+                                  },
+                                  child: Container(
+                                    height: 50,
+                                    width: screenwidth,
+                                    decoration: BoxDecoration(
+                                      //color: Colors.red,
+                                      borderRadius: BorderRadius.circular(30),
+                                    ),
+                                    child: Padding(
+                                      padding:
+                                          EdgeInsets.symmetric(horizontal: 10),
+                                      child: Row(
+                                        children: [
+                                          Icon(
+                                            Icons.tag,
+                                            color: Colors.white,
+                                            size: 27,
+                                          ),
+                                          // SizedBox(width: 15),
+                                          // Text(
+                                          //   "Keşfet",
+                                          //   style: TextStyle(
+                                          //     color: Colors.white,
+                                          //     fontSize: 20,
+                                          //   ),
+                                          // ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
                                 ),
-                                child: Padding(
-                                  padding: EdgeInsets.symmetric(horizontal: 10),
-                                  child: Row(
-                                    children: [
-                                      Icon(
-                                        Icons.home,
+                                SizedBox(height: 5),
+                                InkWell(
+                                  onTap: () {
+                                    setState(() {
+                                      sayfa = "notification";
+                                    });
+                                  },
+                                  child: Container(
+                                    height: 50,
+                                    width: screenwidth,
+                                    decoration: BoxDecoration(
+                                      //color: Colors.red,
+                                      borderRadius: BorderRadius.circular(30),
+                                    ),
+                                    child: Padding(
+                                      padding:
+                                          EdgeInsets.symmetric(horizontal: 10),
+                                      child: Row(
+                                        children: [
+                                          Icon(
+                                            Icons.notifications_none,
+                                            color: Colors.white,
+                                            size: 27,
+                                          ),
+                                          // SizedBox(width: 15),
+                                          // Text(
+                                          //   "Bildirimler",
+                                          //   style: TextStyle(
+                                          //     color: Colors.white,
+                                          //     fontSize: 20,
+                                          //   ),
+                                          // ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(height: 5),
+                                InkWell(
+                                  onTap: () {
+                                    setState(() {
+                                      sayfa = "message";
+                                    });
+                                  },
+                                  child: Container(
+                                    height: 50,
+                                    width: screenwidth,
+                                    decoration: BoxDecoration(
+                                      //color: Colors.red,
+                                      borderRadius: BorderRadius.circular(30),
+                                    ),
+                                    child: Padding(
+                                      padding:
+                                          EdgeInsets.symmetric(horizontal: 10),
+                                      child: Row(
+                                        children: [
+                                          Icon(
+                                            Icons.mail_outline,
+                                            color: Colors.white,
+                                            size: 27,
+                                          ),
+                                          // SizedBox(width: 15),
+                                          // Text(
+                                          //   "Mesajlar",
+                                          //   style: TextStyle(
+                                          //     color: Colors.white,
+                                          //     fontSize: 20,
+                                          //   ),
+                                          // ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(height: 5),
+                                InkWell(
+                                  onTap: () {
+                                    setState(() {
+                                      sayfa = "placemarks";
+                                    });
+                                  },
+                                  child: Container(
+                                    height: 50,
+                                    width: screenwidth,
+                                    decoration: BoxDecoration(
+                                      //color: Colors.red,
+                                      borderRadius: BorderRadius.circular(30),
+                                    ),
+                                    child: Padding(
+                                      padding:
+                                          EdgeInsets.symmetric(horizontal: 10),
+                                      child: Row(
+                                        children: [
+                                          Icon(
+                                            Icons.bookmark_outline,
+                                            color: Colors.white,
+                                            size: 27,
+                                          ),
+                                          // SizedBox(width: 15),
+                                          // Text(
+                                          //   "Yer İşaretleri",
+                                          //   style: TextStyle(
+                                          //     color: Colors.white,
+                                          //     fontSize: 20,
+                                          //   ),
+                                          // ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(height: 5),
+                                InkWell(
+                                  onTap: () {
+                                    setState(() {
+                                      sayfa = "lists";
+                                    });
+                                  },
+                                  child: Container(
+                                    height: 50,
+                                    width: screenwidth,
+                                    decoration: BoxDecoration(
+                                      //color: Colors.red,
+                                      borderRadius: BorderRadius.circular(30),
+                                    ),
+                                    child: Padding(
+                                      padding:
+                                          EdgeInsets.symmetric(horizontal: 10),
+                                      child: Row(
+                                        children: [
+                                          Icon(
+                                            Icons.article_outlined,
+                                            color: Colors.white,
+                                            size: 27,
+                                          ),
+                                          // SizedBox(width: 15),
+                                          // Text(
+                                          //   "Listeler",
+                                          //   style: TextStyle(
+                                          //     color: Colors.white,
+                                          //     fontSize: 20,
+                                          //   ),
+                                          // ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(height: 5),
+                                InkWell(
+                                  onTap: () {
+                                    setState(() {
+                                      sayfa = "profile";
+                                      profile = "ptweets";
+                                    });
+                                  },
+                                  child: Container(
+                                    height: 50,
+                                    width: screenwidth,
+                                    decoration: BoxDecoration(
+                                      //color: Colors.red,
+                                      borderRadius: BorderRadius.circular(30),
+                                    ),
+                                    child: Padding(
+                                      padding:
+                                          EdgeInsets.symmetric(horizontal: 10),
+                                      child: Row(
+                                        children: [
+                                          Icon(
+                                            Icons.person_outline,
+                                            color: Colors.white,
+                                            size: 27,
+                                          ),
+                                          // SizedBox(width: 15),
+                                          // Text(
+                                          //   "Profil",
+                                          //   style: TextStyle(
+                                          //     color: Colors.white,
+                                          //     fontSize: 20,
+                                          //   ),
+                                          // ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(height: 5),
+                                InkWell(
+                                  onTap: () {},
+                                  child: Container(
+                                    height: 50,
+                                    width: screenwidth,
+                                    decoration: BoxDecoration(
+                                      //color: Colors.red,
+                                      borderRadius: BorderRadius.circular(30),
+                                    ),
+                                    child: Padding(
+                                      padding:
+                                          EdgeInsets.symmetric(horizontal: 10),
+                                      child: Row(
+                                        children: [
+                                          Icon(
+                                            Icons.pending_outlined,
+                                            color: Colors.white,
+                                            size: 27,
+                                          ),
+                                          // SizedBox(width: 15),
+                                          // Text(
+                                          //   "Daha fazla",
+                                          //   style: TextStyle(
+                                          //     color: Colors.white,
+                                          //     fontSize: 20,
+                                          //   ),
+                                          // ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(height: 15),
+                                InkWell(
+                                  onTap: () {},
+                                  child: Container(
+                                    height: 50,
+                                    width: screenwidth,
+                                    decoration: BoxDecoration(
+                                      color: Colors.blue,
+                                      borderRadius: BorderRadius.circular(30),
+                                    ),
+                                    child: Center(
+                                      child: Icon(
+                                        Icons.edit,
                                         color: Colors.white,
                                         size: 27,
                                       ),
-                                      SizedBox(width: 15),
-                                      Text(
-                                        "Anasayfa",
-                                        style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize: 20,
-                                        ),
-                                      ),
-                                    ],
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Align(
+                            alignment: Alignment.bottomCenter,
+                            child: Padding(
+                              padding: EdgeInsets.only(right: 15),
+                              child: Container(
+                                color: Colors.black,
+                                child: Container(
+                                  height: 50,
+                                  width: screenwidth,
+                                  decoration: BoxDecoration(
+                                    color: Colors.black,
+                                    borderRadius: BorderRadius.circular(30),
+                                  ),
+                                  child: CircleAvatar(
+                                    backgroundImage: AssetImage(
+                                        "assets/images/sampleAvatar.png"),
                                   ),
                                 ),
                               ),
                             ),
-                            SizedBox(height: 5),
-                            InkWell(
-                              onTap: () {
-                                setState(() {
-                                  sayfa = "explore";
-                                });
-                              },
-                              child: Container(
-                                height: 50,
-                                width: screenwidth,
-                                decoration: BoxDecoration(
-                                  //color: Colors.red,
-                                  borderRadius: BorderRadius.circular(30),
-                                ),
-                                child: Padding(
-                                  padding: EdgeInsets.symmetric(horizontal: 10),
-                                  child: Row(
-                                    children: [
-                                      Icon(
-                                        Icons.tag,
-                                        color: Colors.white,
-                                        size: 27,
+                          ),
+                        ],
+                      ),
+                    ),
+                  )
+                : Container(
+                    //color: Colors.green,
+                    width: 250,
+                    child: Align(
+                      alignment: Alignment.topCenter,
+                      child: Padding(
+                        padding: EdgeInsets.fromLTRB(0, 0, 30, 0),
+                        child: Stack(
+                          children: [
+                            SingleChildScrollView(
+                              scrollDirection: Axis.vertical,
+                              controller: leftMenuController,
+                              padding: EdgeInsets.fromLTRB(0, 0, 0, 75),
+                              child: Column(
+                                children: [
+                                  Container(
+                                    height: 50,
+                                    width: screenwidth,
+                                    decoration: BoxDecoration(
+                                      //color: Colors.red,
+                                      borderRadius: BorderRadius.circular(30),
+                                    ),
+                                    child: Padding(
+                                      padding: EdgeInsets.all(10),
+                                      child: Row(
+                                        children: [
+                                          InkWell(
+                                            onTap: () {
+                                              setState(() {
+                                                sayfa = "main";
+                                              });
+                                            },
+                                            child: Image.asset(
+                                              "assets/images/splashLogo.png",
+                                              fit: BoxFit.cover,
+                                            ),
+                                          ),
+                                        ],
                                       ),
-                                      SizedBox(width: 15),
-                                      Text(
-                                        "Keşfet",
-                                        style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize: 20,
+                                    ),
+                                  ),
+                                  SizedBox(height: 5),
+                                  InkWell(
+                                    onTap: () {
+                                      setState(() {
+                                        sayfa = "main";
+                                      });
+                                    },
+                                    child: Container(
+                                      height: 50,
+                                      width: screenwidth,
+                                      decoration: BoxDecoration(
+                                        //color: Colors.red,
+                                        borderRadius: BorderRadius.circular(30),
+                                      ),
+                                      child: Padding(
+                                        padding: EdgeInsets.symmetric(
+                                            horizontal: 10),
+                                        child: Row(
+                                          children: [
+                                            Icon(
+                                              Icons.home,
+                                              color: Colors.white,
+                                              size: 27,
+                                            ),
+                                            SizedBox(width: 15),
+                                            Text(
+                                              "Anasayfa",
+                                              style: TextStyle(
+                                                color: Colors.white,
+                                                fontSize: 20,
+                                              ),
+                                            ),
+                                          ],
                                         ),
                                       ),
-                                    ],
+                                    ),
                                   ),
-                                ),
-                              ),
-                            ),
-                            SizedBox(height: 5),
-                            InkWell(
-                              onTap: () {
-                                setState(() {
-                                  sayfa = "notification";
-                                });
-                              },
-                              child: Container(
-                                height: 50,
-                                width: screenwidth,
-                                decoration: BoxDecoration(
-                                  //color: Colors.red,
-                                  borderRadius: BorderRadius.circular(30),
-                                ),
-                                child: Padding(
-                                  padding: EdgeInsets.symmetric(horizontal: 10),
-                                  child: Row(
-                                    children: [
-                                      Icon(
-                                        Icons.notifications_none,
-                                        color: Colors.white,
-                                        size: 27,
+                                  SizedBox(height: 5),
+                                  InkWell(
+                                    onTap: () {
+                                      setState(() {
+                                        sayfa = "explore";
+                                      });
+                                    },
+                                    child: Container(
+                                      height: 50,
+                                      width: screenwidth,
+                                      decoration: BoxDecoration(
+                                        //color: Colors.red,
+                                        borderRadius: BorderRadius.circular(30),
                                       ),
-                                      SizedBox(width: 15),
-                                      Text(
-                                        "Bildirimler",
-                                        style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize: 20,
+                                      child: Padding(
+                                        padding: EdgeInsets.symmetric(
+                                            horizontal: 10),
+                                        child: Row(
+                                          children: [
+                                            Icon(
+                                              Icons.tag,
+                                              color: Colors.white,
+                                              size: 27,
+                                            ),
+                                            SizedBox(width: 15),
+                                            Text(
+                                              "Keşfet",
+                                              style: TextStyle(
+                                                color: Colors.white,
+                                                fontSize: 20,
+                                              ),
+                                            ),
+                                          ],
                                         ),
                                       ),
-                                    ],
+                                    ),
                                   ),
-                                ),
-                              ),
-                            ),
-                            SizedBox(height: 5),
-                            InkWell(
-                              onTap: () {
-                                setState(() {
-                                  sayfa = "message";
-                                });
-                              },
-                              child: Container(
-                                height: 50,
-                                width: screenwidth,
-                                decoration: BoxDecoration(
-                                  //color: Colors.red,
-                                  borderRadius: BorderRadius.circular(30),
-                                ),
-                                child: Padding(
-                                  padding: EdgeInsets.symmetric(horizontal: 10),
-                                  child: Row(
-                                    children: [
-                                      Icon(
-                                        Icons.mail_outline,
-                                        color: Colors.white,
-                                        size: 27,
+                                  SizedBox(height: 5),
+                                  InkWell(
+                                    onTap: () {
+                                      setState(() {
+                                        sayfa = "notification";
+                                      });
+                                    },
+                                    child: Container(
+                                      height: 50,
+                                      width: screenwidth,
+                                      decoration: BoxDecoration(
+                                        //color: Colors.red,
+                                        borderRadius: BorderRadius.circular(30),
                                       ),
-                                      SizedBox(width: 15),
-                                      Text(
-                                        "Mesajlar",
-                                        style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize: 20,
+                                      child: Padding(
+                                        padding: EdgeInsets.symmetric(
+                                            horizontal: 10),
+                                        child: Row(
+                                          children: [
+                                            Icon(
+                                              Icons.notifications_none,
+                                              color: Colors.white,
+                                              size: 27,
+                                            ),
+                                            SizedBox(width: 15),
+                                            Text(
+                                              "Bildirimler",
+                                              style: TextStyle(
+                                                color: Colors.white,
+                                                fontSize: 20,
+                                              ),
+                                            ),
+                                          ],
                                         ),
                                       ),
-                                    ],
+                                    ),
                                   ),
-                                ),
-                              ),
-                            ),
-                            SizedBox(height: 5),
-                            InkWell(
-                              onTap: () {
-                                setState(() {
-                                  sayfa = "placemarks";
-                                });
-                              },
-                              child: Container(
-                                height: 50,
-                                width: screenwidth,
-                                decoration: BoxDecoration(
-                                  //color: Colors.red,
-                                  borderRadius: BorderRadius.circular(30),
-                                ),
-                                child: Padding(
-                                  padding: EdgeInsets.symmetric(horizontal: 10),
-                                  child: Row(
-                                    children: [
-                                      Icon(
-                                        Icons.bookmark_outline,
-                                        color: Colors.white,
-                                        size: 27,
+                                  SizedBox(height: 5),
+                                  InkWell(
+                                    onTap: () {
+                                      setState(() {
+                                        sayfa = "message";
+                                      });
+                                    },
+                                    child: Container(
+                                      height: 50,
+                                      width: screenwidth,
+                                      decoration: BoxDecoration(
+                                        //color: Colors.red,
+                                        borderRadius: BorderRadius.circular(30),
                                       ),
-                                      SizedBox(width: 15),
-                                      Text(
-                                        "Yer İşaretleri",
-                                        style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize: 20,
+                                      child: Padding(
+                                        padding: EdgeInsets.symmetric(
+                                            horizontal: 10),
+                                        child: Row(
+                                          children: [
+                                            Icon(
+                                              Icons.mail_outline,
+                                              color: Colors.white,
+                                              size: 27,
+                                            ),
+                                            SizedBox(width: 15),
+                                            Text(
+                                              "Mesajlar",
+                                              style: TextStyle(
+                                                color: Colors.white,
+                                                fontSize: 20,
+                                              ),
+                                            ),
+                                          ],
                                         ),
                                       ),
-                                    ],
+                                    ),
                                   ),
-                                ),
-                              ),
-                            ),
-                            SizedBox(height: 5),
-                            InkWell(
-                              onTap: () {
-                                setState(() {
-                                  sayfa = "lists";
-                                });
-                              },
-                              child: Container(
-                                height: 50,
-                                width: screenwidth,
-                                decoration: BoxDecoration(
-                                  //color: Colors.red,
-                                  borderRadius: BorderRadius.circular(30),
-                                ),
-                                child: Padding(
-                                  padding: EdgeInsets.symmetric(horizontal: 10),
-                                  child: Row(
-                                    children: [
-                                      Icon(
-                                        Icons.article_outlined,
-                                        color: Colors.white,
-                                        size: 27,
+                                  SizedBox(height: 5),
+                                  InkWell(
+                                    onTap: () {
+                                      setState(() {
+                                        sayfa = "placemarks";
+                                      });
+                                    },
+                                    child: Container(
+                                      height: 50,
+                                      width: screenwidth,
+                                      decoration: BoxDecoration(
+                                        //color: Colors.red,
+                                        borderRadius: BorderRadius.circular(30),
                                       ),
-                                      SizedBox(width: 15),
-                                      Text(
-                                        "Listeler",
-                                        style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize: 20,
+                                      child: Padding(
+                                        padding: EdgeInsets.symmetric(
+                                            horizontal: 10),
+                                        child: Row(
+                                          children: [
+                                            Icon(
+                                              Icons.bookmark_outline,
+                                              color: Colors.white,
+                                              size: 27,
+                                            ),
+                                            SizedBox(width: 15),
+                                            Text(
+                                              "Yer İşaretleri",
+                                              style: TextStyle(
+                                                color: Colors.white,
+                                                fontSize: 20,
+                                              ),
+                                            ),
+                                          ],
                                         ),
                                       ),
-                                    ],
+                                    ),
                                   ),
-                                ),
-                              ),
-                            ),
-                            SizedBox(height: 5),
-                            InkWell(
-                              onTap: () {
-                                setState(() {
-                                  sayfa = "profile";
-                                  profile = "ptweets";
-                                });
-                              },
-                              child: Container(
-                                height: 50,
-                                width: screenwidth,
-                                decoration: BoxDecoration(
-                                  //color: Colors.red,
-                                  borderRadius: BorderRadius.circular(30),
-                                ),
-                                child: Padding(
-                                  padding: EdgeInsets.symmetric(horizontal: 10),
-                                  child: Row(
-                                    children: [
-                                      Icon(
-                                        Icons.person_outline,
-                                        color: Colors.white,
-                                        size: 27,
+                                  SizedBox(height: 5),
+                                  InkWell(
+                                    onTap: () {
+                                      setState(() {
+                                        sayfa = "lists";
+                                      });
+                                    },
+                                    child: Container(
+                                      height: 50,
+                                      width: screenwidth,
+                                      decoration: BoxDecoration(
+                                        //color: Colors.red,
+                                        borderRadius: BorderRadius.circular(30),
                                       ),
-                                      SizedBox(width: 15),
-                                      Text(
-                                        "Profil",
-                                        style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize: 20,
+                                      child: Padding(
+                                        padding: EdgeInsets.symmetric(
+                                            horizontal: 10),
+                                        child: Row(
+                                          children: [
+                                            Icon(
+                                              Icons.article_outlined,
+                                              color: Colors.white,
+                                              size: 27,
+                                            ),
+                                            SizedBox(width: 15),
+                                            Text(
+                                              "Listeler",
+                                              style: TextStyle(
+                                                color: Colors.white,
+                                                fontSize: 20,
+                                              ),
+                                            ),
+                                          ],
                                         ),
                                       ),
-                                    ],
+                                    ),
                                   ),
-                                ),
-                              ),
-                            ),
-                            SizedBox(height: 5),
-                            InkWell(
-                              onTap: () {},
-                              child: Container(
-                                height: 50,
-                                width: screenwidth,
-                                decoration: BoxDecoration(
-                                  //color: Colors.red,
-                                  borderRadius: BorderRadius.circular(30),
-                                ),
-                                child: Padding(
-                                  padding: EdgeInsets.symmetric(horizontal: 10),
-                                  child: Row(
-                                    children: [
-                                      Icon(
-                                        Icons.pending_outlined,
-                                        color: Colors.white,
-                                        size: 27,
+                                  SizedBox(height: 5),
+                                  InkWell(
+                                    onTap: () {
+                                      setState(() {
+                                        sayfa = "profile";
+                                        profile = "ptweets";
+                                      });
+                                    },
+                                    child: Container(
+                                      height: 50,
+                                      width: screenwidth,
+                                      decoration: BoxDecoration(
+                                        //color: Colors.red,
+                                        borderRadius: BorderRadius.circular(30),
                                       ),
-                                      SizedBox(width: 15),
-                                      Text(
-                                        "Daha fazla",
-                                        style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize: 20,
+                                      child: Padding(
+                                        padding: EdgeInsets.symmetric(
+                                            horizontal: 10),
+                                        child: Row(
+                                          children: [
+                                            Icon(
+                                              Icons.person_outline,
+                                              color: Colors.white,
+                                              size: 27,
+                                            ),
+                                            SizedBox(width: 15),
+                                            Text(
+                                              "Profil",
+                                              style: TextStyle(
+                                                color: Colors.white,
+                                                fontSize: 20,
+                                              ),
+                                            ),
+                                          ],
                                         ),
                                       ),
-                                    ],
+                                    ),
                                   ),
-                                ),
+                                  SizedBox(height: 5),
+                                  InkWell(
+                                    onTap: () {},
+                                    child: Container(
+                                      height: 50,
+                                      width: screenwidth,
+                                      decoration: BoxDecoration(
+                                        //color: Colors.red,
+                                        borderRadius: BorderRadius.circular(30),
+                                      ),
+                                      child: Padding(
+                                        padding: EdgeInsets.symmetric(
+                                            horizontal: 10),
+                                        child: Row(
+                                          children: [
+                                            Icon(
+                                              Icons.pending_outlined,
+                                              color: Colors.white,
+                                              size: 27,
+                                            ),
+                                            SizedBox(width: 15),
+                                            Text(
+                                              "Daha fazla",
+                                              style: TextStyle(
+                                                color: Colors.white,
+                                                fontSize: 20,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  SizedBox(height: 25),
+                                  Container(
+                                    height: 50,
+                                    width: screenwidth,
+                                    decoration: BoxDecoration(
+                                      color: Colors.blue,
+                                      borderRadius: BorderRadius.circular(30),
+                                    ),
+                                    child: Padding(
+                                      padding:
+                                          EdgeInsets.symmetric(horizontal: 10),
+                                      child: Center(
+                                        child: Text(
+                                          "Tweetle",
+                                          style: TextStyle(
+                                            color: Colors.white,
+                                            fontSize: 17,
+                                            fontWeight: FontWeight.w600,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
                               ),
                             ),
-                            SizedBox(height: 25),
-                            Container(
-                              height: 50,
-                              width: screenwidth,
-                              decoration: BoxDecoration(
-                                color: Colors.blue,
-                                borderRadius: BorderRadius.circular(30),
-                              ),
-                              child: Padding(
-                                padding: EdgeInsets.symmetric(horizontal: 10),
-                                child: Center(
-                                  child: Text(
-                                    "Tweetle",
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 17,
-                                      fontWeight: FontWeight.w600,
+                            Align(
+                              alignment: Alignment.bottomCenter,
+                              child: Container(
+                                color: Colors.black,
+                                child: Padding(
+                                  padding: EdgeInsets.only(bottom: 10),
+                                  child: Container(
+                                    height: 50,
+                                    width: screenwidth,
+                                    decoration: BoxDecoration(
+                                      color: Colors.black,
+                                      borderRadius: BorderRadius.circular(30),
+                                    ),
+                                    child: Padding(
+                                      padding:
+                                          EdgeInsets.symmetric(horizontal: 10),
+                                      child: Row(
+                                        children: [
+                                          CircleAvatar(
+                                            backgroundImage: AssetImage(
+                                                "assets/images/sampleAvatar.png"),
+                                          ),
+                                          SizedBox(width: 15),
+                                          Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceAround,
+                                            children: [
+                                              Column(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.center,
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
+                                                children: [
+                                                  Row(
+                                                    children: [
+                                                      Container(
+                                                        width: 102,
+                                                        child: Text(
+                                                          "newsstechno@gmail.com",
+                                                          overflow: TextOverflow
+                                                              .ellipsis,
+                                                          style: TextStyle(
+                                                            color: Colors.white,
+                                                          ),
+                                                        ),
+                                                      ),
+                                                      SizedBox(width: 3),
+                                                      Icon(
+                                                        Icons.lock,
+                                                        color: Colors.white,
+                                                        size: 20,
+                                                      ),
+                                                    ],
+                                                  ),
+                                                  Text(
+                                                    "@newsstechno",
+                                                    style: TextStyle(
+                                                      color: Colors.grey,
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                              Icon(
+                                                Icons.more_horiz,
+                                                color: Colors.white,
+                                                size: 20,
+                                              )
+                                            ],
+                                          ),
+                                        ],
+                                      ),
                                     ),
                                   ),
                                 ),
@@ -484,107 +989,27 @@ class _MyHomePageState extends State<MyHomePage> {
                           ],
                         ),
                       ),
-                      Align(
-                        alignment: Alignment.bottomCenter,
-                        child: Container(
-                          color: Colors.black,
-                          child: Padding(
-                            padding: EdgeInsets.only(bottom: 10),
-                            child: Container(
-                              height: 50,
-                              width: screenwidth,
-                              decoration: BoxDecoration(
-                                color: Colors.black,
-                                borderRadius: BorderRadius.circular(30),
-                              ),
-                              child: Padding(
-                                padding: EdgeInsets.symmetric(horizontal: 10),
-                                child: Row(
-                                  children: [
-                                    CircleAvatar(
-                                      backgroundImage: AssetImage(
-                                          "assets/images/sampleAvatar.png"),
-                                    ),
-                                    SizedBox(width: 15),
-                                    Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceAround,
-                                      children: [
-                                        Column(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            Row(
-                                              children: [
-                                                Container(
-                                                  width: 102,
-                                                  child: Text(
-                                                    "newsstechno@gmail.com",
-                                                    overflow:
-                                                        TextOverflow.ellipsis,
-                                                    style: TextStyle(
-                                                      color: Colors.white,
-                                                    ),
-                                                  ),
-                                                ),
-                                                SizedBox(width: 3),
-                                                Icon(
-                                                  Icons.lock,
-                                                  color: Colors.white,
-                                                  size: 20,
-                                                ),
-                                              ],
-                                            ),
-                                            Text(
-                                              "@newsstechno",
-                                              style: TextStyle(
-                                                color: Colors.grey,
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                        Icon(
-                                          Icons.more_horiz,
-                                          color: Colors.white,
-                                          size: 20,
-                                        )
-                                      ],
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
+                    ),
                   ),
-                ),
-              ),
-            ),
             Container(
               decoration: BoxDecoration(
-                // color: Colors.amber,
+                //color: Colors.amber,
                 border: Border.all(
                   color: Colors.grey,
                   width: 0.1,
                 ),
               ),
-              width: sayfa == "message" ? 400 : max(0, 600),
+              width: screenwidth <= 690
+                  ? 410
+                  : sayfa == "message"
+                      ? 400
+                      : max(0, 600),
               // child: Trend(),
               child: Builder(
                 builder: (BuildContext context) => mainPage(),
               ),
-              // child: trend == "popular" ||
-              //         trend == "last" ||
-              //         trend == "persons" ||
-              //         trend == "images" ||
-              //         trend == "videos"
-              //     ? Builder(
-              //         builder: (BuildContext context) => trends(),
-              //       )
+              // child: sayfa == "trend"
+              //     ? Trend()
               //     : Builder(
               //         builder: (BuildContext context) => mainPage(),
               //       ),
@@ -592,13 +1017,31 @@ class _MyHomePageState extends State<MyHomePage> {
             SizedBox(
               width: sayfa == "message" ? 0 : 20,
             ),
-            Container(
-              // color: Colors.blue,
-              width: sayfa == "message" ? 570 : 350,
-              child: Builder(
-                builder: (BuildContext context) => leftPage(),
-              ),
-            ),
+            screenwidth <= 990
+                ? Container()
+                : screenwidth <= 1050
+                    ? Container(
+                        //color: Colors.red,
+                        width: sayfa == "message" && screenwidth <= 1050
+                            ? 520
+                            : 300,
+                        child: Container(
+                          // color: Colors.blue,
+                          width: sayfa == "message" && screenwidth <= 990
+                              ? 600
+                              : 350,
+                          child: Builder(
+                            builder: (BuildContext context) => leftPage(),
+                          ),
+                        ),
+                      )
+                    : Container(
+                        // color: Colors.amber,
+                        width: sayfa == "message" ? 570 : 350,
+                        child: Builder(
+                          builder: (BuildContext context) => leftPage(),
+                        ),
+                      ),
           ],
         ),
       ),

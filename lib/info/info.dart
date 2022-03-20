@@ -94,7 +94,7 @@ const info = [
   },
 ];
 
-const trends = [
+const trendss = [
   {
     "text": "Hey What is up with you!!",
     "tweet": "8.177",

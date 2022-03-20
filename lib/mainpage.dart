@@ -140,7 +140,8 @@ class _MainPageState extends State<MainPage> {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 150),
+                  padding: EdgeInsets.symmetric(
+                      horizontal: screenwidth <= 690 ? 50 : 150),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.center,

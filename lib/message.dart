@@ -26,6 +26,7 @@ class _MessageState extends State<Message> {
             return Column(
               children: [
                 Container(
+                  // color: Colors.red,
                   child: Padding(
                     padding: EdgeInsets.fromLTRB(30, 35, 30, 0),
                     child: Column(

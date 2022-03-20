@@ -53,51 +53,43 @@ class _MainleftState extends State<Mainleft> {
                             ),
                           ),
                           SizedBox(height: 15),
-                          InkWell(
-                            onTap: () {
-                              setState(() {
-                                sayfa = "trend";
-                                print(sayfa);
-                              });
-                            },
-                            child: Container(
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Text(
-                                        "Türkiye konumunda gündemde",
-                                        style: TextStyle(
-                                          color: Colors.grey,
-                                          fontSize: 13,
-                                        ),
-                                      ),
-                                      Icon(
-                                        Icons.more_horiz,
+                          Container(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text(
+                                      "Türkiye konumunda gündemde",
+                                      style: TextStyle(
                                         color: Colors.grey,
-                                        size: 20,
-                                      )
-                                    ],
-                                  ),
-                                  Text(
-                                    "#kartatili",
-                                    style: TextStyle(
-                                      color: Colors.white,
+                                        fontSize: 13,
+                                      ),
                                     ),
-                                  ),
-                                  SizedBox(height: 5),
-                                  Text(
-                                    "8.766 Tweet",
-                                    style: TextStyle(
+                                    Icon(
+                                      Icons.more_horiz,
                                       color: Colors.grey,
-                                      fontSize: 13,
-                                    ),
+                                      size: 20,
+                                    )
+                                  ],
+                                ),
+                                Text(
+                                  "#kartatili",
+                                  style: TextStyle(
+                                    color: Colors.white,
                                   ),
-                                ],
-                              ),
+                                ),
+                                SizedBox(height: 5),
+                                Text(
+                                  "8.766 Tweet",
+                                  style: TextStyle(
+                                    color: Colors.grey,
+                                    fontSize: 13,
+                                  ),
+                                ),
+                              ],
                             ),
                           ),
                           SizedBox(height: 20),
@@ -420,7 +412,9 @@ class _MainleftState extends State<Mainleft> {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text(
-                                      "DEVS Society",
+                                      screenwidth <= 1050
+                                          ? "DEVS ..."
+                                          : "DEVS Society",
                                       style: TextStyle(
                                         color: Colors.white,
                                         fontSize: 14,
@@ -473,7 +467,9 @@ class _MainleftState extends State<Mainleft> {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text(
-                                      "Aramizdaki Oyuncu",
+                                      screenwidth <= 1050
+                                          ? "Aramizdaki ..."
+                                          : "Aramizdaki Oyuncu",
                                       style: TextStyle(
                                         color: Colors.white,
                                         fontSize: 14,
@@ -481,7 +477,9 @@ class _MainleftState extends State<Mainleft> {
                                       ),
                                     ),
                                     Text(
-                                      "@Aramizdakioyuncu",
+                                      screenwidth <= 1050
+                                          ? "@Aramizdaki ..."
+                                          : "@Aramizdakioyuncu",
                                       style: TextStyle(
                                         color: Colors.grey,
                                         fontSize: 13,
@@ -530,93 +528,186 @@ class _MainleftState extends State<Mainleft> {
                   Container(
                     child: Padding(
                       padding: EdgeInsets.symmetric(horizontal: 20),
-                      child: Column(
-                        children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              Text(
-                                "Hizmet Şartları",
-                                style: TextStyle(
-                                  color: Colors.grey,
-                                  fontSize: 12,
+                      child: screenwidth <= 1050
+                          ? Column(
+                              children: [
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      "Hizmet Şartları",
+                                      style: TextStyle(
+                                        color: Colors.grey,
+                                        fontSize: 12,
+                                      ),
+                                    ),
+                                    SizedBox(width: 15),
+                                    Text(
+                                      "Gizlilik Politikası",
+                                      style: TextStyle(
+                                        color: Colors.grey,
+                                        fontSize: 12,
+                                      ),
+                                    ),
+                                  ],
                                 ),
-                              ),
-                              SizedBox(width: 15),
-                              Text(
-                                "Gizlilik Politikası",
-                                style: TextStyle(
-                                  color: Colors.grey,
-                                  fontSize: 12,
+                                SizedBox(height: 5),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      "Çerez Politikası",
+                                      style: TextStyle(
+                                        color: Colors.grey,
+                                        fontSize: 12,
+                                      ),
+                                    ),
+                                    SizedBox(width: 15),
+                                    Text(
+                                      "İletişim bilgileri",
+                                      style: TextStyle(
+                                        color: Colors.grey,
+                                        fontSize: 12,
+                                      ),
+                                    ),
+                                  ],
                                 ),
-                              ),
-                              SizedBox(width: 15),
-                              Text(
-                                "Çerez Politikası",
-                                style: TextStyle(
-                                  color: Colors.grey,
-                                  fontSize: 12,
+                                SizedBox(height: 5),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      "Erişilebilirlik",
+                                      style: TextStyle(
+                                        color: Colors.grey,
+                                        fontSize: 12,
+                                      ),
+                                    ),
+                                    SizedBox(width: 15),
+                                    Text(
+                                      "Reklam bilgisi",
+                                      style: TextStyle(
+                                        color: Colors.grey,
+                                        fontSize: 12,
+                                      ),
+                                    ),
+                                  ],
                                 ),
-                              ),
-                            ],
-                          ),
-                          SizedBox(height: 5),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              Text(
-                                "İletişim bilgileri",
-                                style: TextStyle(
-                                  color: Colors.grey,
-                                  fontSize: 12,
+                                SizedBox(height: 5),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      "Daha fazla",
+                                      style: TextStyle(
+                                        color: Colors.grey,
+                                        fontSize: 12,
+                                      ),
+                                    ),
+                                    Icon(
+                                      Icons.more_horiz,
+                                      color: Colors.grey,
+                                      size: 15,
+                                    ),
+                                    SizedBox(width: 15),
+                                    Text(
+                                      "© 2022 Twitter, Inc.",
+                                      style: TextStyle(
+                                        color: Colors.grey,
+                                        fontSize: 12,
+                                      ),
+                                    ),
+                                  ],
                                 ),
-                              ),
-                              SizedBox(width: 15),
-                              Text(
-                                "Erişilebilirlik",
-                                style: TextStyle(
-                                  color: Colors.grey,
-                                  fontSize: 12,
+                              ],
+                            )
+                          : Column(
+                              children: [
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      "Hizmet Şartları",
+                                      style: TextStyle(
+                                        color: Colors.grey,
+                                        fontSize: 12,
+                                      ),
+                                    ),
+                                    SizedBox(width: 15),
+                                    Text(
+                                      "Gizlilik Politikası",
+                                      style: TextStyle(
+                                        color: Colors.grey,
+                                        fontSize: 12,
+                                      ),
+                                    ),
+                                    SizedBox(width: 15),
+                                    Text(
+                                      "Çerez Politikası",
+                                      style: TextStyle(
+                                        color: Colors.grey,
+                                        fontSize: 12,
+                                      ),
+                                    ),
+                                  ],
                                 ),
-                              ),
-                              SizedBox(width: 15),
-                              Text(
-                                "Reklam bilgisi",
-                                style: TextStyle(
-                                  color: Colors.grey,
-                                  fontSize: 12,
+                                SizedBox(height: 5),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      "İletişim bilgileri",
+                                      style: TextStyle(
+                                        color: Colors.grey,
+                                        fontSize: 12,
+                                      ),
+                                    ),
+                                    SizedBox(width: 15),
+                                    Text(
+                                      "Erişilebilirlik",
+                                      style: TextStyle(
+                                        color: Colors.grey,
+                                        fontSize: 12,
+                                      ),
+                                    ),
+                                    SizedBox(width: 15),
+                                    Text(
+                                      "Reklam bilgisi",
+                                      style: TextStyle(
+                                        color: Colors.grey,
+                                        fontSize: 12,
+                                      ),
+                                    ),
+                                  ],
                                 ),
-                              ),
-                            ],
-                          ),
-                          SizedBox(height: 5),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              Text(
-                                "Daha fazla",
-                                style: TextStyle(
-                                  color: Colors.grey,
-                                  fontSize: 12,
+                                SizedBox(height: 5),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      "Daha fazla",
+                                      style: TextStyle(
+                                        color: Colors.grey,
+                                        fontSize: 12,
+                                      ),
+                                    ),
+                                    Icon(
+                                      Icons.more_horiz,
+                                      color: Colors.grey,
+                                      size: 15,
+                                    ),
+                                    SizedBox(width: 15),
+                                    Text(
+                                      "© 2022 Twitter, Inc.",
+                                      style: TextStyle(
+                                        color: Colors.grey,
+                                        fontSize: 12,
+                                      ),
+                                    ),
+                                  ],
                                 ),
-                              ),
-                              Icon(
-                                Icons.more_horiz,
-                                color: Colors.grey,
-                                size: 15,
-                              ),
-                              SizedBox(width: 15),
-                              Text(
-                                "© 2022 Twitter, Inc.",
-                                style: TextStyle(
-                                  color: Colors.grey,
-                                  fontSize: 12,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
+                              ],
+                            ),
                     ),
                   ),
                 ],
